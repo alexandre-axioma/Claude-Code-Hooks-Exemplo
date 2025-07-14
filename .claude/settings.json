@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [],
+    "deny": []
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/pre_tool_use.py"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/notification.py --notify"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/stop.py --chat"
+          }
+        ]
+      }
+    ]
+  }
+}
